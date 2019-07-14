@@ -5,15 +5,13 @@ namespace J\Imap;
 
 class ImapServer extends MailServer
 {
-    private $userName;
-    private $password;
+    private $mailAccount;
     private $connection;
 
-    public function __construct(string $host, string $userName, string $password)
+    public function __construct(string $host, MailAccount $mailAccount)
     {
         parent::__construct($host);
-        $this->userName = $userName;
-        $this->password = $password;
         $this->connection = null;
+        $this->mailAccount = $mailAccount;
     }
 }
